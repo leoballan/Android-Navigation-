@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/menuFragment">
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.vila.navigationtest.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_rubroFragment"
+            app:destination="@id/rubroFragment"
+            app:enterAnim="@anim/slide_right"
+            app:exitAnim="@anim/slide_right" />
+        <action
+            android:id="@+id/action_menuFragment_to_clienteFragment"
+            app:destination="@id/clienteFragment"
+            app:enterAnim="@anim/slide_right"
+            app:exitAnim="@anim/slide_right" />
+        <action
+            android:id="@+id/action_menuFragment_to_ventaFragment"
+            app:destination="@id/ventaFragment"
+            app:enterAnim="@anim/slide_right"
+            app:exitAnim="@anim/slide_right" />
+        <action
+            android:id="@+id/action_menuFragment_to_articuloFragment"
+            app:destination="@id/articuloFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/articuloFragment"
+        android:name="com.vila.navigationtest.ArticuloFragment"
+        android:label="fragment_articulo"
+        tools:layout="@layout/fragment_articulo" >
+        <action
+            android:id="@+id/action_articuloFragment_to_articuloDetalleFragment"
+            app:destination="@id/articuloDetalleFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/slide_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/ventaFragment"
+        android:name="com.vila.navigationtest.VentaFragment"
+        android:label="fragment_venta"
+        tools:layout="@layout/fragment_venta" />
+    <fragment
+        android:id="@+id/clienteFragment"
+        android:name="com.vila.navigationtest.ClienteFragment"
+        android:label="fragment_cliente"
+        tools:layout="@layout/fragment_cliente" >
+        <action
+            android:id="@+id/action_clienteFragment_to_CLienteDetalleFragment"
+            app:destination="@id/CLienteDetalleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rubroFragment"
+        android:name="com.vila.navigationtest.RubroFragment"
+        android:label="fragment_rubro"
+        tools:layout="@layout/fragment_rubro" >
+        <action
+            android:id="@+id/action_rubroFragment_to_rubroDetalleFragment"
+            app:destination="@id/rubroDetalleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/articuloDetalleFragment"
+        android:name="com.vila.navigationtest.ArticuloDetalleFragment"
+        android:label="fragment_articulo_detalle"
+        tools:layout="@layout/fragment_articulo_detalle" >
+        <argument
+            android:name="articulo"
+            app:argType="com.vila.navigationtest.Articulo"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/CLienteDetalleFragment"
+        android:name="com.vila.navigationtest.CLienteDetalleFragment"
+        android:label="fragment_c_liente_detalle"
+        tools:layout="@layout/fragment_c_liente_detalle" />
+    <fragment
+        android:id="@+id/rubroDetalleFragment"
+        android:name="com.vila.navigationtest.RubroDetalleFragment"
+        android:label="fragment_rubro_detalle"
+        tools:layout="@layout/fragment_rubro_detalle" />
+</navigation>
